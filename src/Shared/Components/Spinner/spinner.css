@@ -1,0 +1,112 @@
+.tg-progress-spinner-wrapper {
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .tg-progress-spinner-wrapper:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+  
+  .tg-progress-spinner-loader {
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #337ab7;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    animation: spin 1.5s ease-out 0.2s infinite;
+  }
+  
+  .tg-progress-spinner-close-icon {
+    padding: 30px 30px;
+    font-size: 25px;
+    line-height: 25px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+    position: absolute;
+    top: 8px;
+    left: 75px;
+  }
+  .tg-progress-spinner-close-icon:hover {
+    opacity: 0.8;
+  }
+  
+  /* .tg-progress-spinner-loader bs-icon {
+    padding: 30px 25px;
+    font-size: 25px;
+    line-height: 25px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  } */
+  
+  /* .tg-progress-spinner-loader:hover bs-icon {
+    padding: 30px 25px;
+    font-size: 25px;
+    line-height: 25px;
+    opacity: 0.8;
+  } */
+  
+  .tg-progress-spinner-loader-inline {
+    border: 0.25em solid #f3f3f3;
+    border-top: 0.25em solid #337ab7;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  @-moz-keyframes spin {
+    0% {
+      -moz-transform: rotate(0deg);
+    }
+  
+    100% {
+      -moz-transform: rotate(359deg);
+    }
+  }
+  
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+  
+    100% {
+      -webkit-transform: rotate(359deg);
+    }
+  }
+  
+  @-o-keyframes spin {
+    0% {
+      -o-transform: rotate(0deg);
+    }
+  
+    100% {
+      -o-transform: rotate(359deg);
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+    }
+  }
+  

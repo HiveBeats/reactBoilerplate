@@ -1,0 +1,20 @@
+.todo-item:hover {
+    background-color: gray;
+}
+
+.close-button {
+    color: white;
+    border: 1px solid black ;
+    border-radius: 5%;
+    background-color: #CC0000;
+}
+
+.close-button:hover {
+    background-color: #ff4444; 
+} 
+
+.close-button:active {
+    border-color:#705ebb;
+    background-color: #9933CC;
+			box-shadow: 0px 0px 1px rgba(0,0,0,0.65);
+}
