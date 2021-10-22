@@ -43,16 +43,21 @@ instance.interceptors.response.use(
           originalConfig._retry = true;
   
           try {
+            const user = TokenService.getUser();
             const rs = await instance.post("/auth/refresh-token", {
-              refreshToken: TokenService.getLocalRefreshToken(),
+              refreshToken: user?.refreshToken,
+              userName: user?.userName
             });
   
-            const { accessToken } = rs.data.accessToken;
+            const accessToken = rs.data.accessToken;
             TokenService.updateLocalAccessToken(accessToken);
   
-            const { refreshToken } = rs.data.refreshToken;
+            const refreshToken = rs.data.refreshToken;
             TokenService.updateLocalRefreshToken(refreshToken);
-  
+            
+            if (accessToken) {
+              originalConfig.headers["Authorization"] = 'Bearer ' + accessToken;
+            }
             return instance(originalConfig);
           } catch (_error) {
             return Promise.reject(_error);

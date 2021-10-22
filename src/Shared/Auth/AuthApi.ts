@@ -29,6 +29,7 @@ export interface LoginResponse {
 
 export interface RefreshTokenRequest {
     refreshToken: string;
+    userName?: string;
 }
 
 export class AuthApi {

@@ -22,7 +22,7 @@ const getLocalAccessToken = (): string|undefined => {
   
 const updateLocalAccessToken = (token: string) => {
   let user = getUser();
-  if (user)
+  if (user && token)
   {
       user.accessToken = token;
       setUser(user);
@@ -31,7 +31,7 @@ const updateLocalAccessToken = (token: string) => {
 
 const updateLocalRefreshToken = (token: string) => {
   let user = getUser();
-  if (user)
+  if (user && token)
   {
       user.refreshToken = token;
       setUser(user);
@@ -40,7 +40,6 @@ const updateLocalRefreshToken = (token: string) => {
   
 const setUser = (user: IUser) => {
   const userJson = JSON.stringify(user);
-  console.log(userJson);
   localStorage.setItem("user", userJson);
 };
   
