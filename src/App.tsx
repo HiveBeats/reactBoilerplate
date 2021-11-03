@@ -8,11 +8,8 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 
-import TodoPageComponent from './Todo/TodoPageComponent';
-import { ServicePageComponent } from './Service/Components/ServicePageComponent';
 import { Route, Switch, Redirect, useLocation, useHistory } from 'react-router-dom';
 import Nav from './Nav';
-import CalendarPageComponent from './Calendar/Components/CalendarPageComponent';
 import { WeatherForecastComponent } from './Weather/Components/WeatherForecastComponent';
 import { LoginComponent } from './Shared/Auth/LoginComponent';
 import { Toast } from 'primereact/toast';
@@ -56,10 +53,7 @@ function App() {
       <div className="container-fluid py-4">
         <Switch>
             <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
-            <Route exact path="/" component={ServicePageComponent} />
-            <Route path="/todos" component={TodoPageComponent} />
-            <Route path="/calendar" component={CalendarPageComponent} />
-            <Route path="/weather" component={WeatherForecastComponent} />
+            <Route exact path="/" component={WeatherForecastComponent} />
             <Route path="/login" component={LoginComponent} />
             <Redirect from="*" to="/" />
         </Switch>
